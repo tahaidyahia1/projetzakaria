@@ -59,11 +59,6 @@ export default function Home({ onNavigate }: HomeProps) {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
-                Excellence en Consulting
-              </span>
-            </div>
             <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
               Transformez Votre
               <br />
