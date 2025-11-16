@@ -41,7 +41,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="font-display font-bold text-lg mb-6">Navigation</h4>
             <ul className="space-y-3">
-              {['Accueil', 'À propos', 'Expertise', 'Contactez-nous'].map((item, index) => (
+              {['Accueil', 'À propos', 'Expertise', 'Contact'].map((item, index) => (
                 <li key={index}>
                   <button
                     onClick={() =>

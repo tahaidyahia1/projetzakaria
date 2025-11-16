@@ -23,7 +23,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     { id: 'home', label: 'Accueil' },
     { id: 'about', label: 'À propos' },
     { id: 'expertise', label: 'Expertise' },
-    { id: 'contact', label: 'Contactez-nous' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   return (

@@ -79,7 +79,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 onClick={() => onNavigate('contact')}
                 className="group px-8 py-4 bg-white text-primary rounded-full font-semibold text-lg hover:bg-primary-50 transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-2"
               >
-                Contactez-nous
+                Commencer
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
               <button
