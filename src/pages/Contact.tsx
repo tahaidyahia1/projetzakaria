@@ -162,7 +162,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
-                      placeholder="+212 6XX XX XX XX"
+                      placeholder="+212 664-779420"
                     />
                   </div>
 
@@ -240,10 +240,10 @@ export default function Contact() {
                     Notre Bureau
                   </h3>
                   <p className="text-gray-600">
-                    Casablanca, Maroc
+                    Mahaj riad appt 6 , Rabat , Maroc
                   </p>
                   <p className="text-sm text-gray-500 mt-4">
-                    Nous sommes situés au cœur de Casablanca pour mieux vous servir.
+                    Nous sommes situés au cœur de Rabat pour mieux vous servir.
                   </p>
                 </div>
               </div>
@@ -255,11 +255,11 @@ export default function Contact() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center pb-3 border-b border-white/20">
                     <span className="font-medium">Lundi - Vendredi</span>
-                    <span className="text-white/80">9h00 - 18h00</span>
+                    <span className="text-white/80">8h30 - 18h00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Samedi</span>
-                    <span className="text-white/80">9h00 - 13h00</span>
+                    <span className="text-white/80">9h00 - 12h30</span>
                   </div>
                 </div>
               </div>
