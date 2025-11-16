@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import FAQ from '../components/FAQ';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -267,6 +268,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <FAQ />
     </div>
   );
 }

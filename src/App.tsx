@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import About from './pages/About';
 import Expertise from './pages/Expertise';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -22,6 +24,8 @@ function App() {
         return <About />;
       case 'expertise':
         return <Expertise onNavigate={handleNavigate} />;
+      case 'blog':
+        return <Blog onNavigate={handleNavigate} />;
       case 'contact':
         return <Contact />;
       default:
@@ -34,6 +38,7 @@ function App() {
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       <main>{renderPage()}</main>
       <Footer onNavigate={handleNavigate} />
+      <WhatsAppButton />
     </div>
   );
 }
