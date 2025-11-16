@@ -90,22 +90,6 @@ export default function Home({ onNavigate }: HomeProps) {
               </button>
             </div>
           </div>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 animate-slide-up">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group p-8 glass-effect rounded-2xl hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-3d"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <service.icon className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-display font-bold text-xl text-white mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-white/80">{service.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
