@@ -90,15 +90,15 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <a
-                  href="tel:+212522XXXXXX"
+                  href="tel:+212 664-779420"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  +212 5 22 XX XX XX
+                  +212 664-779420
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">Casablanca, Maroc</span>
+                <span className="text-gray-400">Rabat , Maroc</span>
               </li>
             </ul>
           </div>
