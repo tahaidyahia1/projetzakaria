@@ -5,19 +5,12 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Expertise from './pages/Expertise';
 import Contact from './pages/Contact';
-import ServiceDetail from './pages/ServiceDetail';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [serviceId, setServiceId] = useState<string | null>(null);
 
-  const handleNavigate = (page: string, serviceIdParam?: string) => {
+  const handleNavigate = (page: string) => {
     setCurrentPage(page);
-    if (serviceIdParam) {
-      setServiceId(serviceIdParam);
-    } else {
-      setServiceId(null);
-    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -31,12 +24,6 @@ function App() {
         return <Expertise onNavigate={handleNavigate} />;
       case 'contact':
         return <Contact />;
-      case 'service-detail':
-        return serviceId ? (
-          <ServiceDetail serviceId={serviceId} onNavigate={handleNavigate} />
-        ) : (
-          <Home onNavigate={handleNavigate} />
-        );
       default:
         return <Home onNavigate={handleNavigate} />;
     }

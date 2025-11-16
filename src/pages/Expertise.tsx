@@ -1,11 +1,94 @@
-import { CheckCircle } from 'lucide-react';
-import { servicesData } from '../data/servicesData';
+import {
+  GraduationCap,
+  Shield,
+  Brain,
+  Zap,
+  Users,
+  Award,
+  TrendingUp,
+  Leaf,
+  CheckCircle,
+  Activity,
+} from 'lucide-react';
 
 interface ExpertiseProps {
-  onNavigate: (page: string, serviceId?: string) => void;
+  onNavigate: (page: string) => void;
 }
 
 export default function Expertise({ onNavigate }: ExpertiseProps) {
+  const services = [
+    {
+      icon: GraduationCap,
+      title: 'Formation',
+      description: 'Programmes de formation personnalisés pour développer les compétences de vos équipes',
+      color: 'from-blue-500 to-blue-600',
+      features: ['Formation sur mesure', 'E-learning', 'Certifications'],
+    },
+    {
+      icon: Shield,
+      title: 'Gestion de risque',
+      description: 'Identification, analyse et mitigation des risques stratégiques et opérationnels',
+      color: 'from-red-500 to-red-600',
+      features: ['Audit de risques', 'Plans de mitigation', 'Conformité'],
+    },
+    {
+      icon: Brain,
+      title: 'Intelligence artificielle',
+      description: 'Solutions IA innovantes pour automatiser et optimiser vos processus métier',
+      color: 'from-purple-500 to-purple-600',
+      features: ['Machine Learning', 'Automatisation', 'Analytics'],
+    },
+    {
+      icon: Zap,
+      title: 'Audit énergie',
+      description: 'Optimisation énergétique pour réduire coûts et empreinte environnementale',
+      color: 'from-yellow-500 to-yellow-600',
+      features: ['Audit énergétique', 'Optimisation', 'Économies'],
+    },
+    {
+      icon: Users,
+      title: 'Accompagnement et conseil',
+      description: 'Conseil stratégique personnalisé pour guider votre transformation',
+      color: 'from-green-500 to-green-600',
+      features: ['Stratégie', 'Transformation', 'Coaching exécutif'],
+    },
+    {
+      icon: Award,
+      title: 'Qualité',
+      description: 'Systèmes de management de la qualité et certifications ISO',
+      color: 'from-indigo-500 to-indigo-600',
+      features: ['ISO 9001', 'Amélioration continue', 'Audits qualité'],
+    },
+    {
+      icon: TrendingUp,
+      title: 'Coaching',
+      description: 'Coaching professionnel pour leaders et équipes performantes',
+      color: 'from-pink-500 to-pink-600',
+      features: ['Leadership', 'Performance', 'Développement personnel'],
+    },
+    {
+      icon: Leaf,
+      title: 'Développement durable',
+      description: 'Stratégies RSE et développement durable pour un impact positif',
+      color: 'from-emerald-500 to-emerald-600',
+      features: ['RSE', 'Durabilité', 'Impact environnemental'],
+    },
+    {
+      icon: CheckCircle,
+      title: 'Agrément ONSSA',
+      description: 'Accompagnement pour l\'obtention des agréments ONSSA',
+      color: 'from-orange-500 to-orange-600',
+      features: ['Conformité ONSSA', 'Dossiers techniques', 'Suivi'],
+    },
+    {
+      icon: Activity,
+      title: 'Santé et sécurité',
+      description: 'Systèmes de management santé-sécurité au travail',
+      color: 'from-cyan-500 to-cyan-600',
+      features: ['ISO 45001', 'Prévention', 'Culture sécurité'],
+    },
+  ];
+
   return (
     <div className="bg-white pt-32">
       <section className="py-20 bg-gradient-to-br from-primary-600 to-primary-800 relative overflow-hidden">
@@ -31,54 +114,51 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicesData.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={service.id}
-                  className="group perspective-1000"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-3d transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group perspective-1000"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-3d transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
 
-                    <div className="relative p-8">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-
-                      <h3 className="font-display font-bold text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                        {service.title}
-                      </h3>
-
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        {service.shortDescription}
-                      </p>
-
-                      <div className="space-y-2 pt-4 border-t border-gray-100">
-                        {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-sm text-gray-500">
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="mt-6 pt-6 border-t border-gray-100">
-                        <button
-                          onClick={() => onNavigate('service-detail', service.id)}
-                          className="w-full py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
-                        >
-                          En savoir plus
-                        </button>
-                      </div>
+                  <div className="relative p-8">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
+                      <service.icon className="w-8 h-8 text-white" />
                     </div>
 
-                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700`} />
+                    <h3 className="font-display font-bold text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    <div className="space-y-2 pt-4 border-t border-gray-100">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-500">
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 pt-6 border-t border-gray-100">
+                      <button
+                        onClick={() => onNavigate('contact')}
+                        className="w-full py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
+                      >
+                        En savoir plus
+                      </button>
+                    </div>
                   </div>
+
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700`} />
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
