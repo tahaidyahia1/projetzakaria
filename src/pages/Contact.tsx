@@ -44,8 +44,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Adresse',
-      value: '
-Mahaj Riad Imm6 Appt6 Hay Riad, Rabat, Morocco',
+      value: 'Mahaj riad , appt 6 , Rabat , Maroc',
       link: null,
     },
   ];
