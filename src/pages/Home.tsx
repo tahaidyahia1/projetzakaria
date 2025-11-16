@@ -107,7 +107,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { number: '15+', label: 'Années d\'expérience' },
+              { number: '8+', label: 'Années d\'expérience' },
               { number: '200+', label: 'Clients satisfaits' },
               { number: '500+', label: 'Projets réalisés' },
               { number: '98%', label: 'Taux de satisfaction' },
