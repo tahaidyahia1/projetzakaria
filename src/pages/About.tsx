@@ -29,7 +29,7 @@ export default function About() {
     const steps = 60;
     const increment = duration / steps;
 
-    const targets = { years: 15, clients: 200, projects: 500 };
+    const targets = { years: 8, clients: 200, projects: 500 };
 
     let step = 0;
     const timer = setInterval(() => {
@@ -50,10 +50,9 @@ export default function About() {
   };
 
   const timeline = [
-    { year: '2010', title: 'Fondation', description: 'Création de CAP2A Consulting avec une vision claire' },
-    { year: '2013', title: 'Expansion', description: 'Ouverture de nouveaux services et domaines d\'expertise' },
-    { year: '2017', title: 'Innovation', description: 'Intégration de l\'IA et des technologies avancées' },
-    { year: '2020', title: 'Transformation', description: 'Adaptation digitale et croissance exponentielle' },
+    { year: '2017', title: 'Fondation', description: 'Création de CAP2A Consulting avec une vision claire' },
+    { year: '2020', title: 'Expansion', description: 'Ouverture de nouveaux services et domaines d\'expertise' },
+    { year: '2022', title: 'Innovation', description: 'Intégration de l\'IA et des technologies avancées' },
     { year: '2024', title: 'Excellence', description: 'Leader reconnu dans le conseil stratégique' },
   ];
 
@@ -89,7 +88,7 @@ export default function About() {
               À Propos de CAP2A
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Depuis plus de 15 ans, CAP2A Consulting accompagne les entreprises dans leur transformation et leur croissance avec expertise et passion.
+              Depuis 2017, CAP2A Consulting accompagne les entreprises dans leur transformation et leur croissance avec expertise et passion.
             </p>
           </div>
 
