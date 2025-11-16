@@ -38,13 +38,14 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Téléphone',
-      value: '+212 5 22 XX XX XX',
-      link: 'tel:+212522XXXXXX',
+      value: '+212 664-779420',
+      link: '+212 664-779420',
     },
     {
       icon: MapPin,
       title: 'Adresse',
-      value: 'Casablanca, Maroc',
+      value: '
+Mahaj Riad Imm6 Appt6 Hay Riad, Rabat, Morocco',
       link: null,
     },
   ];
