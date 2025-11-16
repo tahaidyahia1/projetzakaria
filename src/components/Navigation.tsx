@@ -77,12 +77,6 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 />
               </button>
             ))}
-            <button
-              onClick={() => onNavigate('contact')}
-              className="px-6 py-2.5 bg-primary text-white rounded-full font-medium hover:bg-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Contact
-            </button>
           </div>
 
           <button
