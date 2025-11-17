@@ -109,9 +109,9 @@ export default function Home({ onNavigate }: HomeProps) {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
               <img
-                src="/Capture d'écran 2025-11-16 à 17.46.11.jpg"
+                src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="CAP2A Consulting en action"
-                className="relative rounded-3xl shadow-3xl w-full object-cover"
+                className="relative rounded-3xl shadow-3xl w-full object-cover h-[500px]"
               />
             </div>
 
