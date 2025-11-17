@@ -1,10 +1,12 @@
-import { Calendar, User, ArrowRight, TrendingUp } from 'lucide-react';
+import { Calendar, User, ArrowRight, TrendingUp, X } from 'lucide-react';
+import { useState } from 'react';
 
 interface BlogProps {
   onNavigate: (page: string) => void;
 }
 
 export default function Blog({ onNavigate }: BlogProps) {
+  const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
   const articles = [
     {
       id: 1,
@@ -146,7 +148,7 @@ L'avenir de la gestion des risques est résolument technologique. Les entreprise
                     </p>
 
                     <div className="prose prose-lg max-w-none mb-8">
-                      {article.content.split('\n\n').slice(0, 3).map((paragraph, idx) => (
+                      {article.content.split('\n\n').slice(0, 2).map((paragraph, idx) => (
                         <p key={idx} className="text-gray-700 leading-relaxed mb-4">
                           {paragraph}
                         </p>
@@ -163,7 +165,7 @@ L'avenir de la gestion des risques est résolument technologique. Les entreprise
                       </div>
 
                       <button
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => setSelectedArticle(article.id)}
                         className="group/btn flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-600 transition-all duration-300 hover:scale-105"
                       >
                         En savoir plus
@@ -195,6 +197,101 @@ L'avenir de la gestion des risques est résolument technologique. Les entreprise
           </button>
         </div>
       </section>
+
+      {selectedArticle && (
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 animate-fade-in" onClick={() => setSelectedArticle(null)}>
+          <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-3xl" onClick={(e) => e.stopPropagation()}>
+            {articles.filter(a => a.id === selectedArticle).map(article => (
+              <div key={article.id}>
+                <div className="relative h-[300px] overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <button
+                    onClick={() => setSelectedArticle(null)}
+                    className="absolute top-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-lg"
+                  >
+                    <X size={24} className="text-gray-700" />
+                  </button>
+                </div>
+
+                <div className="p-8 lg:p-12">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+                      {article.category}
+                    </span>
+                    <div className="flex items-center gap-2 text-gray-500 text-sm">
+                      <Calendar size={16} />
+                      <span>{article.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-500 text-sm">
+                      <TrendingUp size={16} />
+                      <span>{article.readTime}</span>
+                    </div>
+                  </div>
+
+                  <h2 className="font-display font-bold text-4xl md:text-5xl text-gray-900 mb-6">
+                    {article.title}
+                  </h2>
+
+                  <div className="flex items-center gap-3 mb-8 pb-6 border-b border-gray-200">
+                    <User className="w-12 h-12 text-primary bg-primary-100 rounded-full p-2" />
+                    <div>
+                      <div className="font-semibold text-gray-900">{article.author}</div>
+                      <div className="text-sm text-gray-500">Expert CAP2A</div>
+                    </div>
+                  </div>
+
+                  <div className="prose prose-lg max-w-none">
+                    {article.content.split('\n\n').map((paragraph, idx) => {
+                      if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+                        return (
+                          <h3 key={idx} className="font-display font-bold text-2xl text-gray-900 mt-8 mb-4">
+                            {paragraph.replace(/\*\*/g, '')}
+                          </h3>
+                        );
+                      }
+                      if (paragraph.startsWith('1.') || paragraph.startsWith('2.') || paragraph.startsWith('3.') || paragraph.startsWith('-')) {
+                        return (
+                          <p key={idx} className="text-gray-700 leading-relaxed mb-3 ml-4">
+                            {paragraph}
+                          </p>
+                        );
+                      }
+                      return (
+                        <p key={idx} className="text-gray-700 leading-relaxed mb-6">
+                          {paragraph}
+                        </p>
+                      );
+                    })}
+                  </div>
+
+                  <div className="mt-12 p-6 bg-primary-50 rounded-2xl">
+                    <h3 className="font-display font-bold text-xl text-gray-900 mb-3">
+                      Intéressé par nos services ?
+                    </h3>
+                    <p className="text-gray-700 mb-4">
+                      Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous accompagner.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setSelectedArticle(null);
+                        onNavigate('contact');
+                      }}
+                      className="group flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-600 transition-all duration-300 hover:scale-105"
+                    >
+                      Contactez-nous
+                      <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
