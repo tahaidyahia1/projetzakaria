@@ -41,11 +41,9 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             className="cursor-pointer group flex items-center gap-3"
             onClick={() => onNavigate('home')}
           >
-            <img
-              src="/logo.png"
-              alt="CAP2A Logo"
-              className="w-10 h-10 lg:w-12 lg:h-12 transition-transform duration-300 group-hover:scale-110"
-            />
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+              <span className="text-white font-bold text-xl">C</span>
+            </div>
             <h1
               className={`font-display font-bold text-2xl lg:text-3xl transition-colors ${
                 isScrolled ? 'text-primary' : 'text-white'
