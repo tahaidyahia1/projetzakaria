@@ -37,7 +37,7 @@ Chez CAP2A Consulting, nous accompagnons les entreprises dans la mise en place d
       date: '15 Janvier 2025',
       category: 'Qualité',
       readTime: '5 min',
-      image: '/training-session.jpg',
+      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200',
     },
     {
       id: 2,
