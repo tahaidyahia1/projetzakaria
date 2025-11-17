@@ -98,8 +98,57 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-5xl text-gray-900 mb-4">
-              Pourquoi Choisir CAP2A ?
+              Qui Sommes-Nous ?
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+              CAP2A Consulting est votre partenaire de confiance pour la transformation et l'excellence opérationnelle
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+              <img
+                src="/Capture d'écran 2025-11-16 à 17.46.11.png"
+                alt="CAP2A Consulting en action"
+                className="relative rounded-3xl shadow-3xl w-full object-cover"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="font-display font-bold text-3xl text-gray-900">
+                Votre Excellence, Notre Mission
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Chez <span className="font-semibold text-primary">CAP2A Consulting</span>, nous croyons que chaque entreprise mérite d'atteindre son plein potentiel. Fort de plus de 8 années d'expérience, nous accompagnons les organisations dans leur transformation digitale et leur quête d'excellence opérationnelle.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Notre approche unique combine expertise métier, innovation technologique et accompagnement humain pour garantir des résultats durables et mesurables.
+              </p>
+              <div className="grid grid-cols-2 gap-6 pt-6">
+                <div className="p-6 bg-primary-50 rounded-xl">
+                  <div className="font-display font-bold text-3xl text-primary mb-2">200+</div>
+                  <div className="text-gray-700 font-medium">Clients Satisfaits</div>
+                </div>
+                <div className="p-6 bg-primary-50 rounded-xl">
+                  <div className="font-display font-bold text-3xl text-primary mb-2">500+</div>
+                  <div className="text-gray-700 font-medium">Projets Réalisés</div>
+                </div>
+              </div>
+              <button
+                onClick={() => onNavigate('about')}
+                className="group mt-6 px-8 py-4 bg-primary text-white rounded-full font-semibold text-lg hover:bg-primary-600 transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+              >
+                En savoir plus
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              </button>
+            </div>
+          </div>
+
+          <div className="text-center mb-12">
+            <h3 className="font-display font-bold text-3xl text-gray-900 mb-4">
+              Pourquoi Choisir CAP2A ?
+            </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Une expertise reconnue au service de votre croissance
             </p>
