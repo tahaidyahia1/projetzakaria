@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import {
-  GraduationCap,
-  Shield,
-  Brain,
-  Zap,
+  Search,
   Users,
-  Award,
   TrendingUp,
-  Leaf,
+  GraduationCap,
+  ChevronDown,
+  ChevronUp,
   CheckCircle,
-  Activity,
-  X,
+  FileText,
+  Award,
+  Building,
+  Shield,
+  Leaf,
+  Zap,
+  ClipboardCheck,
 } from 'lucide-react';
 
 interface ExpertiseProps {
@@ -18,258 +21,476 @@ interface ExpertiseProps {
 }
 
 export default function Expertise({ onNavigate }: ExpertiseProps) {
-  const [selectedService, setSelectedService] = useState<number | null>(null);
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
-  const services = [
+  const toggleSection = (section: string) => {
+    setExpandedSection(expandedSection === section ? null : section);
+  };
+
+  const mainServices = [
     {
-      icon: GraduationCap,
-      title: 'Formation',
-      description: 'Programmes de formation personnalisés pour développer les compétences de vos équipes',
+      id: 'audit',
+      icon: Search,
+      title: 'AUDIT',
+      description: 'Évaluation approfondie de vos systèmes et processus pour identifier les écarts, les opportunités d\'amélioration et garantir la conformité aux référentiels internationaux.',
       color: 'from-blue-500 to-blue-600',
-      features: ['Formation sur mesure', 'E-learning', 'Certifications'],
-      details: {
-        intro: 'Nous développons des programmes de formation sur mesure pour renforcer les compétences de vos équipes et accélérer leur performance.',
-        benefits: [
-          'Identification précise des besoins en formation',
-          'Programmes adaptés à votre secteur d\'activité',
-          'Formation en présentiel, distanciel ou hybride',
-          'Supports pédagogiques professionnels',
-          'Évaluation et suivi post-formation',
-          'Certifications reconnues'
-        ],
-        process: [
-          'Audit des compétences et besoins',
-          'Conception du programme personnalisé',
-          'Animation par des experts métiers',
-          'Évaluation des acquis',
-          'Suivi et accompagnement'
-        ]
-      }
     },
     {
-      icon: Shield,
-      title: 'Gestion de risque',
-      description: 'Identification, analyse et mitigation des risques stratégiques et opérationnels',
-      color: 'from-red-500 to-red-600',
-      features: ['Audit de risques', 'Plans de mitigation', 'Conformité'],
-      details: {
-        intro: 'Notre expertise en gestion des risques vous aide à identifier, évaluer et maîtriser les risques qui peuvent impacter votre organisation.',
-        benefits: [
-          'Cartographie complète des risques',
-          'Évaluation quantitative et qualitative',
-          'Plans de mitigation adaptés',
-          'Mise en conformité réglementaire',
-          'Culture de gestion des risques',
-          'Tableaux de bord et reporting'
-        ],
-        process: [
-          'Identification des risques',
-          'Analyse et évaluation',
-          'Élaboration des plans d\'action',
-          'Mise en œuvre des mesures',
-          'Suivi et révision continue'
-        ]
-      }
-    },
-    {
-      icon: Brain,
-      title: 'Intelligence artificielle',
-      description: 'Solutions IA innovantes pour automatiser et optimiser vos processus métier',
-      color: 'from-teal-500 to-teal-600',
-      features: ['Machine Learning', 'Automatisation', 'Analytics'],
-      details: {
-        intro: 'Transformez votre entreprise avec des solutions d\'intelligence artificielle qui automatisent vos processus et génèrent de la valeur.',
-        benefits: [
-          'Automatisation intelligente des processus',
-          'Analyse prédictive et prescriptive',
-          'Optimisation des opérations',
-          'Réduction des coûts opérationnels',
-          'Amélioration de la prise de décision',
-          'Avantage concurrentiel durable'
-        ],
-        process: [
-          'Analyse du potentiel IA',
-          'Conception de la solution',
-          'Développement et entraînement',
-          'Intégration et déploiement',
-          'Optimisation continue'
-        ]
-      }
-    },
-    {
-      icon: Zap,
-      title: 'Audit énergie',
-      description: 'Optimisation énergétique pour réduire coûts et empreinte environnementale',
-      color: 'from-yellow-500 to-yellow-600',
-      features: ['Audit énergétique', 'Optimisation', 'Économies'],
-      details: {
-        intro: 'Réduisez vos coûts énergétiques et votre empreinte carbone grâce à nos audits énergétiques complets et nos solutions d\'optimisation.',
-        benefits: [
-          'Diagnostic énergétique complet',
-          'Identification des gisements d\'économie',
-          'Plans d\'action priorisés',
-          'Réduction significative des coûts',
-          'Amélioration de l\'empreinte carbone',
-          'Conformité énergétique'
-        ],
-        process: [
-          'Analyse des consommations',
-          'Audit sur site',
-          'Modélisation énergétique',
-          'Recommandations priorisées',
-          'Accompagnement à la mise en œuvre'
-        ]
-      }
-    },
-    {
+      id: 'conseil',
       icon: Users,
-      title: 'Accompagnement et conseil',
-      description: 'Conseil stratégique personnalisé pour guider votre transformation',
+      title: 'CONSEIL',
+      description: 'Accompagnement stratégique personnalisé pour définir et mettre en œuvre les solutions adaptées à vos enjeux organisationnels, réglementaires et de performance.',
       color: 'from-green-500 to-green-600',
-      features: ['Stratégie', 'Transformation', 'Coaching exécutif'],
-      details: {
-        intro: 'Bénéficiez d\'un accompagnement stratégique personnalisé pour piloter vos projets de transformation et atteindre vos objectifs.',
-        benefits: [
-          'Vision stratégique claire',
-          'Conduite du changement',
-          'Optimisation organisationnelle',
-          'Amélioration de la performance',
-          'Coaching des dirigeants',
-          'Support opérationnel continu'
-        ],
-        process: [
-          'Diagnostic stratégique',
-          'Définition de la vision',
-          'Plan de transformation',
-          'Accompagnement opérationnel',
-          'Mesure des résultats'
-        ]
-      }
     },
     {
-      icon: Award,
-      title: 'Qualité',
-      description: 'Systèmes de management de la qualité et certifications ISO',
-      color: 'from-slate-500 to-slate-600',
-      features: ['ISO 9001', 'Amélioration continue', 'Audits qualité'],
-      details: {
-        intro: 'Mettez en place des systèmes de management de la qualité robustes et obtenez vos certifications ISO avec notre accompagnement expert.',
-        benefits: [
-          'Certification ISO 9001',
-          'Amélioration de la satisfaction client',
-          'Optimisation des processus',
-          'Réduction des non-conformités',
-          'Culture d\'amélioration continue',
-          'Avantage commercial'
-        ],
-        process: [
-          'Diagnostic initial',
-          'Conception du système qualité',
-          'Formation des équipes',
-          'Mise en œuvre et documentation',
-          'Audit et certification'
-        ]
-      }
-    },
-    {
+      id: 'accompagnement',
       icon: TrendingUp,
-      title: 'Coaching',
-      description: 'Coaching professionnel pour leaders et équipes performantes',
-      color: 'from-rose-500 to-rose-600',
-      features: ['Leadership', 'Performance', 'Développement personnel'],
-      details: {
-        intro: 'Développez votre plein potentiel et celui de vos équipes grâce à un coaching professionnel adapté à vos enjeux.',
-        benefits: [
-          'Développement du leadership',
-          'Amélioration de la performance',
-          'Gestion du stress et des priorités',
-          'Communication efficace',
-          'Cohésion d\'équipe renforcée',
-          'Atteinte des objectifs'
-        ],
-        process: [
-          'Évaluation des besoins',
-          'Définition des objectifs',
-          'Sessions de coaching individuelles ou collectives',
-          'Exercices pratiques et mise en situation',
-          'Suivi et ajustement'
-        ]
-      }
+      title: 'ACCOMPAGNEMENT',
+      description: 'Support opérationnel continu dans la mise en place et l\'optimisation de vos projets de transformation, certification et amélioration continue.',
+      color: 'from-purple-500 to-purple-600',
     },
     {
-      icon: Leaf,
-      title: 'Développement durable',
-      description: 'Stratégies RSE et développement durable pour un impact positif',
-      color: 'from-emerald-500 to-emerald-600',
-      features: ['RSE', 'Durabilité', 'Impact environnemental'],
-      details: {
-        intro: 'Construisez une stratégie de développement durable et de RSE qui crée de la valeur partagée pour votre entreprise et la société.',
-        benefits: [
-          'Stratégie RSE alignée sur votre activité',
-          'Réduction de l\'impact environnemental',
-          'Amélioration de l\'image de marque',
-          'Engagement des parties prenantes',
-          'Conformité réglementaire',
-          'Création de valeur durable'
-        ],
-        process: [
-          'Diagnostic RSE',
-          'Définition de la stratégie',
-          'Plan d\'action prioritaire',
-          'Mise en œuvre des initiatives',
-          'Reporting et communication'
-        ]
-      }
-    },
-    {
-      icon: CheckCircle,
-      title: 'Agrément ONSSA',
-      description: 'Accompagnement pour l\'obtention des agréments ONSSA',
+      id: 'formation',
+      icon: GraduationCap,
+      title: 'FORMATION',
+      description: 'Programmes de formation sur mesure pour développer les compétences de vos équipes et renforcer leur maîtrise des normes, méthodes et outils de management.',
       color: 'from-orange-500 to-orange-600',
-      features: ['Conformité ONSSA', 'Dossiers techniques', 'Suivi'],
-      details: {
-        intro: 'Obtenez votre agrément ONSSA avec notre accompagnement complet, de la préparation du dossier jusqu\'à l\'obtention de l\'agrément.',
-        benefits: [
-          'Maîtrise des exigences ONSSA',
-          'Constitution du dossier technique',
-          'Mise en conformité des installations',
-          'Préparation aux audits',
-          'Suivi de la procédure',
-          'Taux de réussite élevé'
-        ],
-        process: [
-          'Audit de conformité',
-          'Plan de mise en conformité',
-          'Constitution du dossier',
-          'Accompagnement lors des visites',
-          'Obtention de l\'agrément'
-        ]
-      }
+    },
+  ];
+
+  const expertiseDomains = [
+    {
+      id: 'laboratoires',
+      icon: FileText,
+      title: 'Laboratoires',
+      color: 'from-teal-500 to-teal-600',
+      sections: [
+        {
+          title: 'Mise en place de Systèmes de Management',
+          items: [
+            {
+              subtitle: '✔️ ISO 17025:2017 – Laboratoires d\'essais et d\'étalonnages',
+              points: [
+                'Diagnostic de conformité initiale',
+                'Mise en place du système documentaire',
+                'Validation des méthodes',
+                'Traçabilité métrologique',
+                'Évaluation des compétences',
+                'Préparation à l\'accréditation',
+              ],
+            },
+            {
+              subtitle: '✔️ ISO 15189:2012 – Laboratoires de biologie médicale',
+              points: ['…….'],
+            },
+          ],
+        },
+        {
+          title: 'Participation et Gestion des Essais Interlaboratoires (EIL)',
+          items: [
+            {
+              points: [
+                'Organisation des essais interlaboratoires',
+                'Analyse statistique',
+                'Actions correctives',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Formations Techniques et Managériales',
+          items: [
+            {
+              points: [
+                'BPL',
+                'Techniques d\'analyse',
+                'Formations ISO (17025, 15189, 9001, 19011…)',
+                'Gestion des risques',
+                'Validation des méthodes',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Audits',
+          items: [
+            {
+              points: [
+                'Audits internes',
+                'Préparation aux audits d\'accréditation',
+                'Audit technique',
+                'Audit blanc',
+                'Réponses aux organismes d\'accréditation',
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
-      icon: Activity,
-      title: 'Santé et sécurité',
-      description: 'Systèmes de management santé-sécurité au travail',
-      color: 'from-cyan-500 to-cyan-600',
-      features: ['ISO 45001', 'Prévention', 'Culture sécurité'],
-      details: {
-        intro: 'Protégez vos collaborateurs et développez une culture de sécurité forte avec nos systèmes de management santé-sécurité au travail.',
-        benefits: [
-          'Réduction des accidents du travail',
-          'Conformité réglementaire',
-          'Certification ISO 45001',
-          'Amélioration des conditions de travail',
-          'Culture de prévention',
-          'Réduction des coûts liés aux accidents'
-        ],
-        process: [
-          'Évaluation des risques professionnels',
-          'Plan de prévention',
-          'Formation et sensibilisation',
-          'Mise en place du système de management',
-          'Audits et amélioration continue'
-        ]
-      }
+      id: 'agroalimentaire',
+      icon: Award,
+      title: 'Industrie Agroalimentaire',
+      color: 'from-green-500 to-green-600',
+      sections: [
+        {
+          title: 'Mise en place de Systèmes de Management',
+          items: [
+            {
+              points: [
+                'ISO 22000',
+                'FSSC 22000',
+                'ISO 9001',
+                'ISO 14001',
+                'ISO 45001',
+                'ISO 50001',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Accompagnement ONSSA',
+          items: [
+            {
+              points: ['Agréments et autorisations'],
+            },
+          ],
+        },
+        {
+          title: 'Audits',
+          items: [
+            {
+              points: [
+                'Audit interne',
+                'Audit de conformité réglementaire',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Formation',
+          items: [
+            {
+              points: [
+                'Formations ISO',
+                'BPH',
+                'HACCP',
+                'Audit interne',
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'administration',
+      icon: Building,
+      title: 'Administration Publique',
+      color: 'from-blue-500 to-blue-600',
+      sections: [
+        {
+          title: 'Gouvernance, Organisation & Performance',
+          items: [
+            {
+              points: [
+                'Diagnostic organisationnel',
+                'Refonte des structures',
+                'Cartographie des processus',
+                'Outils de gouvernance',
+                'Plans d\'action stratégiques',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Gestion de la Qualité & Systèmes de Management',
+          items: [
+            {
+              subtitle: '✔️ Référentiels : ISO 9001, 14001, 45001, 27001, 37001, 50001',
+              points: [],
+            },
+            {
+              subtitle: '✔️ Accompagnement : diagnostic, revue documentaire, management des risques, audits internes, préparation certification',
+              points: [],
+            },
+          ],
+        },
+        {
+          title: 'Gestion des Risques, Audit & Contrôle Interne',
+          items: [
+            {
+              points: [
+                'Plan d\'audit',
+                'Cartographie des risques',
+                'Audit de maturité',
+                'Conformité réglementaire',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Développement Durable & RSE',
+          items: [
+            {
+              points: [
+                'Stratégies RSE',
+                'Plans climat',
+                'Optimisation des ressources',
+                'Programmes territoriaux',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Appui Réglementaire',
+          items: [
+            {
+              points: [
+                'Veille juridique',
+                'Analyse de conformité',
+                'Harmonisation des procédures',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Formation',
+          items: [
+            {
+              points: [
+                'Systèmes de management',
+                'Gouvernance & leadership',
+                'Développement personnel',
+                'Anti-corruption',
+                'Sécurité SI',
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'sst',
+      icon: Shield,
+      title: 'Santé & Sécurité au Travail (SST)',
+      color: 'from-red-500 to-red-600',
+      sections: [
+        {
+          title: 'Mise en place et amélioration SST',
+          items: [
+            {
+              subtitle: '✔️ ISO 45001',
+              points: [
+                'Diagnostic initial',
+                'Système documentaire',
+                'Gestion des risques',
+                'Programme de maîtrise des dangers',
+                'Accompagnement à la certification',
+              ],
+            },
+            {
+              subtitle: '✔️ Systèmes intégrés QSE',
+              points: ['Intégration ISO 9001 – 14001 – 45001'],
+            },
+          ],
+        },
+        {
+          title: 'Analyse et maîtrise des risques',
+          items: [
+            {
+              points: [
+                'Chimique, biologique, électrique, machines, incendie, RPS',
+                'Plans d\'action',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Hygiène & sécurité',
+          items: [
+            {
+              points: [
+                'Programmes SSL',
+                'EPI',
+                'Aménagement des locaux',
+                'Gestion des déchets',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Formations',
+          items: [
+            {
+              points: [
+                'SST',
+                'ISO 45001',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Audits',
+          items: [
+            {
+              points: [
+                'Audit ISO 45001',
+                'Conformité légale',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Outils d\'amélioration',
+          items: [
+            {
+              points: [
+                '5S',
+                'Lean Safety',
+                'Analyse d\'incidents',
+                'Tableaux de bord',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Gouvernance',
+          items: [
+            {
+              points: [
+                'Politiques SST',
+                'Comités HSE',
+                'Culture sécurité',
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'durable',
+      icon: Leaf,
+      title: 'Développement Durable',
+      color: 'from-emerald-500 to-emerald-600',
+      sections: [
+        {
+          title: 'RSU & RSO',
+          items: [
+            {
+              points: [
+                'Diagnostic',
+                'ISO 26000',
+                'Plans d\'action',
+                'Reporting & conformité',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Formation',
+          items: [
+            {
+              points: [
+                'Développement durable',
+                'ODD',
+                'Sensibilisation des équipes',
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'energie',
+      icon: Zap,
+      title: 'Énergie',
+      color: 'from-yellow-500 to-yellow-600',
+      sections: [
+        {
+          title: 'Stratégie & Management',
+          items: [
+            {
+              subtitle: '✔️ ISO 50001',
+              points: [
+                'Diagnostic énergétique',
+                'SMEn',
+                'UES',
+                'Plans de performance',
+                'Accompagnement certification',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Audit & Optimisation',
+          items: [
+            {
+              points: [
+                'Audit énergétique industriel / tertiaire / public',
+                'Installations CVC, éclairage, vapeur, air comprimé…',
+                'Optimisation',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Décarbonation & Bilan Carbone',
+          items: [
+            {
+              points: [
+                'Bilan GES',
+                'Stratégies de réduction',
+                'Plans de décarbonation',
+                'ENR',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Efficacité Énergétique',
+          items: [
+            {
+              points: [
+                'PEE',
+                'Comptage intelligent',
+                'Optimisation procédés',
+                'Conformité AMEE / réglementaire',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Formation',
+          items: [
+            {
+              points: [
+                'ISO 50001',
+                'Gestion de l\'énergie',
+                'Transition énergétique',
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'inspection',
+      icon: ClipboardCheck,
+      title: 'Organisme d\'Inspection',
+      color: 'from-slate-500 to-slate-600',
+      sections: [
+        {
+          title: '✔️ ISO 17020 – Inspection & contrôle officiel',
+          items: [
+            {
+              points: [
+                'Formation des inspecteurs',
+                'Mise en place d\'un système d\'évaluation de la conformité',
+              ],
+            },
+          ],
+        },
+      ],
     },
   ];
 
@@ -286,7 +507,7 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
               </span>
             </div>
             <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-6">
-              Expertise Multi-Sectorielle
+              Notre Expertise
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Des solutions complètes et intégrées pour accompagner votre entreprise à chaque étape de sa transformation
@@ -297,14 +518,14 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
 
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {mainServices.map((service, index) => (
               <div
-                key={index}
+                key={service.id}
                 className="group perspective-1000"
-                style={{ animationDelay: `${index * 50}ms` }}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-3d transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-3d transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
 
                   <div className="relative p-8">
@@ -312,35 +533,78 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
 
-                    <h3 className="font-display font-bold text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="font-display font-bold text-2xl text-gray-900 mb-4 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
 
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed">
                       {service.description}
                     </p>
-
-                    <div className="space-y-2 pt-4 border-t border-gray-100">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-500">
-                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-6 pt-6 border-t border-gray-100">
-                      <button
-                        onClick={() => setSelectedService(index)}
-                        className="w-full py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
-                      >
-                        En savoir plus
-                      </button>
-                    </div>
                   </div>
 
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700`} />
                 </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-6">
+            {expertiseDomains.map((domain) => (
+              <div
+                key={domain.id}
+                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              >
+                <button
+                  onClick={() => toggleSection(domain.id)}
+                  className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${domain.color} rounded-xl flex items-center justify-center shadow-md`}>
+                      <domain.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h2 className="font-display font-bold text-2xl text-gray-900">
+                      {domain.title}
+                    </h2>
+                  </div>
+                  {expandedSection === domain.id ? (
+                    <ChevronUp className="w-6 h-6 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-6 h-6 text-gray-400" />
+                  )}
+                </button>
+
+                {expandedSection === domain.id && (
+                  <div className="px-6 pb-6 space-y-6 animate-fade-in">
+                    {domain.sections.map((section, idx) => (
+                      <div key={idx} className="bg-gray-50 rounded-xl p-6">
+                        <h3 className="font-display font-bold text-xl text-gray-900 mb-4">
+                          {section.title}
+                        </h3>
+                        <div className="space-y-4">
+                          {section.items.map((item, itemIdx) => (
+                            <div key={itemIdx}>
+                              {item.subtitle && (
+                                <p className="font-semibold text-gray-800 mb-2">
+                                  {item.subtitle}
+                                </p>
+                              )}
+                              {item.points.length > 0 && (
+                                <ul className="space-y-2">
+                                  {item.points.map((point, pointIdx) => (
+                                    <li key={pointIdx} className="flex items-start gap-2">
+                                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                                      <span className="text-gray-700">{point}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -354,129 +618,22 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
 
             <div className="relative z-10 text-center text-white">
               <h2 className="font-display font-bold text-4xl md:text-5xl mb-6">
-                Une Approche Sur Mesure
+                Prêt à démarrer votre projet ?
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Chaque entreprise est unique. Nous créons des solutions personnalisées qui répondent précisément à vos besoins et objectifs stratégiques.
+                Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous accompagner
               </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                {[
-                  { number: '01', title: 'Diagnostic', description: 'Analyse approfondie de vos besoins' },
-                  { number: '02', title: 'Stratégie', description: 'Plan d\'action personnalisé' },
-                  { number: '03', title: 'Exécution', description: 'Mise en œuvre et suivi' },
-                ].map((step, index) => (
-                  <div key={index} className="glass-effect rounded-2xl p-8 hover:bg-white/20 transition-all duration-500">
-                    <div className="font-display font-bold text-5xl text-white/30 mb-4">
-                      {step.number}
-                    </div>
-                    <h3 className="font-display font-bold text-2xl mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-white/80">{step.description}</p>
-                  </div>
-                ))}
-              </div>
 
               <button
                 onClick={() => onNavigate('contact')}
-                className="mt-12 px-10 py-5 bg-white text-primary rounded-full font-bold text-lg hover:bg-primary-50 transition-all duration-300 hover:scale-105 shadow-2xl inline-flex items-center gap-2"
+                className="px-10 py-5 bg-white text-primary rounded-full font-bold text-lg hover:bg-primary-50 transition-all duration-300 hover:scale-105 shadow-2xl inline-flex items-center gap-2"
               >
-                Discutons de votre projet
+                Contactez-nous
               </button>
             </div>
           </div>
         </div>
       </section>
-
-      {selectedService !== null && (() => {
-        const service = services[selectedService];
-        const ServiceIcon = service.icon;
-        return (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in" onClick={() => setSelectedService(null)}>
-            <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-3d" onClick={(e) => e.stopPropagation()}>
-              <div className={`relative bg-gradient-to-br ${service.color} p-8 rounded-t-3xl`}>
-                <button
-                  onClick={() => setSelectedService(null)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 hover:rotate-90"
-                >
-                  <X className="w-6 h-6 text-white" />
-                </button>
-
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center">
-                    <ServiceIcon className="w-8 h-8 text-white" />
-                  </div>
-                  <h2 className="font-display font-bold text-4xl text-white">
-                    {service.title}
-                  </h2>
-                </div>
-                <p className="text-white/90 text-lg">
-                  {service.description}
-                </p>
-              </div>
-
-              <div className="p-8">
-                <div className="mb-8">
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    {service.details.intro}
-                  </p>
-                </div>
-
-                <div className="mb-8">
-                  <h3 className="font-display font-bold text-2xl text-gray-900 mb-4 flex items-center gap-2">
-                    <CheckCircle className="w-6 h-6 text-primary" />
-                    Bénéfices
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {service.details.benefits.map((benefit: string, idx: number) => (
-                      <div key={idx} className="flex items-start gap-3 bg-gray-50 p-4 rounded-xl hover:bg-gray-100 transition-colors">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{benefit}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-8">
-                  <h3 className="font-display font-bold text-2xl text-gray-900 mb-4 flex items-center gap-2">
-                    <TrendingUp className="w-6 h-6 text-primary" />
-                    Notre Processus
-                  </h3>
-                  <div className="space-y-3">
-                    {service.details.process.map((step: string, idx: number) => (
-                      <div key={idx} className="flex items-center gap-4 bg-gradient-to-r from-primary/5 to-transparent p-4 rounded-xl hover:from-primary/10 transition-colors">
-                        <div className={`w-10 h-10 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center flex-shrink-0`}>
-                          <span className="text-white font-bold">{idx + 1}</span>
-                        </div>
-                        <span className="text-gray-700 font-medium">{step}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <button
-                    onClick={() => {
-                      setSelectedService(null);
-                      onNavigate('contact');
-                    }}
-                    className="flex-1 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
-                  >
-                    Demander un devis
-                  </button>
-                  <button
-                    onClick={() => setSelectedService(null)}
-                    className="px-8 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300"
-                  >
-                    Fermer
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      })()}
     </div>
   );
 }
