@@ -47,7 +47,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               className="w-10 h-10 lg:w-12 lg:h-12 transition-transform duration-300 group-hover:scale-110"
             />
             <h1
-              className={`font-display font-bold text-2xl lg:text-3xl transition-colors ${
+              className={`font-display font-bold text-xl md:text-2xl lg:text-3xl transition-colors ${
                 isScrolled ? 'text-primary' : 'text-white'
               } group-hover:text-primary-400`}
             >
