@@ -38,9 +38,14 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div
-            className="cursor-pointer group"
+            className="cursor-pointer group flex items-center gap-3"
             onClick={() => onNavigate('home')}
           >
+            <img
+              src="/logoo.png"
+              alt="CAP2A Consulting Logo"
+              className="w-10 h-10 lg:w-12 lg:h-12 transition-transform duration-300 group-hover:scale-110"
+            />
             <h1
               className={`font-display font-bold text-2xl lg:text-3xl transition-colors ${
                 isScrolled ? 'text-primary' : 'text-white'
