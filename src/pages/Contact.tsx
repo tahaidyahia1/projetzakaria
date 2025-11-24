@@ -231,11 +231,11 @@ export default function Contact() {
               </div>
 
               <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
-                <div className="h-64 bg-gradient-to-br from-primary-100 to-primary-200 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <MapPin className="w-20 h-20 text-primary" />
-                  </div>
-                </div>
+                <img
+                  src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Bureau moderne et professionnel"
+                  className="w-full h-64 object-cover"
+                />
                 <div className="p-6">
                   <h3 className="font-display font-bold text-xl text-gray-900 mb-2">
                     Notre Bureau

@@ -109,8 +109,8 @@ export default function Home({ onNavigate }: HomeProps) {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
               <img
-                src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="CAP2A Consulting en action"
+                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Équipe professionnelle en réunion stratégique"
                 className="relative rounded-3xl shadow-3xl w-full object-cover h-[500px]"
               />
             </div>
@@ -154,7 +154,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
             {[
               { number: '8+', label: 'Années d\'expérience' },
               { number: '200+', label: 'Clients satisfaits' },
@@ -172,6 +172,48 @@ export default function Home({ onNavigate }: HomeProps) {
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Consultation d'affaires professionnelle"
+                className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="font-display font-bold text-xl mb-2">Conseil Stratégique</h4>
+                  <p className="text-white/90">Expertise personnalisée pour votre croissance</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Formation et développement des compétences"
+                className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="font-display font-bold text-xl mb-2">Formation Continue</h4>
+                  <p className="text-white/90">Développez les talents de vos équipes</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Innovation et transformation digitale"
+                className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="font-display font-bold text-xl mb-2">Innovation Digitale</h4>
+                  <p className="text-white/90">Technologies de pointe pour votre avenir</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

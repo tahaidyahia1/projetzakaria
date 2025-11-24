@@ -518,6 +518,33 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
 
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="space-y-6">
+              <div className="inline-block mb-4">
+                <span className="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+                  Notre Méthode
+                </span>
+              </div>
+              <h2 className="font-display font-bold text-4xl text-gray-900">
+                Une Approche 360°
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Nous intervenons à tous les niveaux de votre organisation avec une méthodologie éprouvée qui combine audit, conseil, accompagnement et formation pour des résultats durables.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                De la conformité réglementaire à l'optimisation énergétique, en passant par la transformation digitale, nous possédons l'expertise multi-sectorielle pour répondre à tous vos défis.
+              </p>
+            </div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+              <img
+                src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Excellence opérationnelle et performance"
+                className="relative rounded-3xl shadow-3xl w-full object-cover h-[400px]"
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {mainServices.map((service, index) => (
               <div
@@ -546,6 +573,35 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Laboratoire et recherche scientifique"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="font-display font-bold text-xl mb-2">Laboratoires</h4>
+                  <p className="text-white/90">Accréditation ISO 17025 & 15189</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/5029857/pexels-photo-5029857.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Industrie agroalimentaire et qualité"
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="font-display font-bold text-xl mb-2">Agroalimentaire</h4>
+                  <p className="text-white/90">FSSC 22000, ISO 22000 & HACCP</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-6">

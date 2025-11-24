@@ -131,15 +131,13 @@ export default function About() {
                 Nous combinons expertise technique, connaissance approfondie des secteurs et approche humaine pour garantir des résultats durables et mesurables.
               </p>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-3" />
-              <div className="relative bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-12 text-white shadow-3d">
-                <Eye className="w-16 h-16 mb-6" />
-                <h3 className="font-display font-bold text-3xl mb-4">Notre Vision</h3>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  Devenir le partenaire de référence pour les entreprises qui aspirent à l'excellence et à l'innovation dans un monde en constante évolution.
-                </p>
-              </div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
+              <img
+                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Vision stratégique et innovation"
+                className="relative rounded-3xl shadow-3xl w-full object-cover h-[500px]"
+              />
             </div>
           </div>
         </div>
@@ -193,6 +191,33 @@ export default function About() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500"></div>
+              <img
+                src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Collaboration et travail d'équipe"
+                className="relative rounded-3xl shadow-3xl w-full object-cover h-[400px]"
+              />
+            </div>
+            <div className="space-y-6">
+              <div className="inline-block mb-4">
+                <span className="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+                  Notre Approche
+                </span>
+              </div>
+              <h3 className="font-display font-bold text-3xl text-gray-900">
+                Une Méthode Prouvée
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Notre méthodologie éprouvée combine analyse rigoureuse, expertise sectorielle et innovation continue. Nous travaillons main dans la main avec nos clients pour garantir des résultats mesurables et durables.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Chaque projet est unique, c'est pourquoi nous adaptons notre approche à vos besoins spécifiques tout en nous appuyant sur les meilleures pratiques internationales.
+              </p>
+            </div>
+          </div>
+
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-5xl text-gray-900 mb-4">
               Nos Valeurs
