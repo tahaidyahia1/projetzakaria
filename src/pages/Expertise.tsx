@@ -545,6 +545,12 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
             </div>
           </div>
 
+          <div className="text-center mb-12">
+            <h2 className="font-display font-bold text-4xl text-gray-900 mb-4">
+              NOS SERVICES
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {mainServices.map((service, index) => (
               <div
@@ -573,6 +579,12 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mb-12">
+            <h2 className="font-display font-bold text-4xl text-gray-900 mb-4">
+              NOS EXPERTISES
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
