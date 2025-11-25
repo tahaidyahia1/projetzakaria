@@ -5,6 +5,11 @@ export default function PartnerBanner() {
     { name: 'ONHYM', image: '/partners/onhym.png (ONHYM logo).png' },
     { name: 'SRM', image: '/partners/srm.png (SRM logo).png' },
     { name: 'Fès-Meknès', image: '/logoooooo.png' },
+    { name: 'Institut Pasteur', image: '/partners/institut pasteur (logo).png' },
+    { name: 'Royaume du Maroc', image: '/partners/royaume(logo).jpeg' },
+    { name: 'ANA', image: '/partners/ana (logo).jpeg' },
+    { name: 'Diversey', image: '/partners/diversay(logo).png' },
+    { name: 'Euromed', image: '/partners/euromed(logo).png' },
   ];
 
   return (
