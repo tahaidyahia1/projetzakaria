@@ -27,6 +27,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     { id: 'contact', label: 'Contact' },
   ];
 
+  const isDarkBackground = currentPage === 'home' || currentPage === 'expertise';
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -48,7 +50,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             />
             <h1
               className={`font-display font-bold text-xl md:text-2xl lg:text-3xl transition-colors ${
-                isScrolled ? 'text-primary' : 'text-white'
+                isScrolled ? 'text-primary' : isDarkBackground ? 'text-white' : 'text-primary'
               } group-hover:text-primary-400`}
             >
               CAP2A Consulting
@@ -64,10 +66,10 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                   currentPage === item.id
                     ? isScrolled
                       ? 'text-primary'
-                      : 'text-white'
+                      : isDarkBackground ? 'text-white' : 'text-primary'
                     : isScrolled
                     ? 'text-gray-600 hover:text-primary'
-                    : 'text-white/90 hover:text-white'
+                    : isDarkBackground ? 'text-white/90 hover:text-white' : 'text-gray-600 hover:text-primary'
                 }`}
               >
                 {item.label}
@@ -81,7 +83,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
           </div>
 
           <button
-            className={`md:hidden ${isScrolled ? 'text-primary' : 'text-white'}`}
+            className={`md:hidden ${isScrolled ? 'text-primary' : isDarkBackground ? 'text-white' : 'text-primary'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
