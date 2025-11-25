@@ -32,7 +32,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-lg shadow-lg py-4'
-          : 'bg-white/90 backdrop-blur-md shadow-md py-6'
+          : 'bg-gradient-to-r from-primary-600 to-primary-800 py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -47,7 +47,9 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               className="w-10 h-10 lg:w-12 lg:h-12 transition-transform duration-300 group-hover:scale-110"
             />
             <h1
-              className={`font-display font-bold text-xl md:text-2xl lg:text-3xl transition-colors text-primary group-hover:text-primary-400`}
+              className={`font-display font-bold text-xl md:text-2xl lg:text-3xl transition-colors ${
+                isScrolled ? 'text-primary' : 'text-white'
+              } group-hover:text-primary-400`}
             >
               CAP2A Consulting
             </h1>
@@ -60,8 +62,12 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 onClick={() => onNavigate(item.id)}
                 className={`font-medium text-sm lg:text-base transition-all duration-300 relative group ${
                   currentPage === item.id
-                    ? 'text-primary'
-                    : 'text-gray-600 hover:text-primary'
+                    ? isScrolled
+                      ? 'text-primary'
+                      : 'text-white'
+                    : isScrolled
+                    ? 'text-gray-600 hover:text-primary'
+                    : 'text-white/90 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -75,7 +81,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
           </div>
 
           <button
-            className={`md:hidden text-primary`}
+            className={`md:hidden ${isScrolled ? 'text-primary' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
