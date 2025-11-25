@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles, TrendingUp, Users, Award } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import PartnerBanner from '../components/PartnerBanner';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -217,6 +218,8 @@ export default function Home({ onNavigate }: HomeProps) {
           </div>
         </div>
       </section>
+
+      <PartnerBanner />
 
       <section className="py-24 bg-gradient-to-br from-primary-600 to-primary-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
