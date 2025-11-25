@@ -65,11 +65,16 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="font-display font-bold text-lg mb-6">Services</h4>
             <ul className="space-y-3 text-gray-400">
-              <li>Formation</li>
-              <li>Gestion de risque</li>
-              <li>Intelligence artificielle</li>
-              <li>Audit énergie</li>
-              <li>Coaching</li>
+              {['Audit', 'Conseil', 'Accompagnement', 'Formation'].map((service, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => onNavigate('expertise')}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {service}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
