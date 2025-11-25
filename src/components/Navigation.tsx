@@ -32,7 +32,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-lg shadow-lg py-4'
-          : 'bg-gradient-to-r from-primary-600 to-primary-800 py-6'
+          : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
