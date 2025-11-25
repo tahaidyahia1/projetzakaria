@@ -27,7 +27,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     { id: 'contact', label: 'Contact' },
   ];
 
-  const isDarkBackground = currentPage === 'home' || currentPage === 'expertise';
+  const isDarkBackground = currentPage === 'home';
 
   return (
     <nav
