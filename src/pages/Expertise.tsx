@@ -498,12 +498,7 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
                 'Audits internes et évaluation du système',
                 'Préparation à l’accréditation',
                 'Formation des inspecteurs',
-          
-              title: 
-              items: [
-            {  
-             points: [ 
-                'Méthodologie d’inspection : préparation, exécution, plan d’échantillonnage',
+          'Méthodologie d’inspection : préparation, exécution, plan d’échantillonnage',
                 'Rédaction des constats, rapports d’inspection et classification des non-conformités',
                 'Gestion des situations critiques, communication professionnelle et éthique de l’inspecteur',
                 'Techniques d’évaluation visuelle, documentaire et métrologique selon le domaine d’inspection',
