@@ -604,35 +604,6 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-              <img
-                src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Laboratoire et recherche scientifique"
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <h4 className="font-display font-bold text-xl mb-2">Laboratoires</h4>
-                  <p className="text-white/90">Accréditation ISO 17025 & 15189</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-              <img
-                src="https://images.pexels.com/photos/5029857/pexels-photo-5029857.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Industrie agroalimentaire et qualité"
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <h4 className="font-display font-bold text-xl mb-2">Agroalimentaire</h4>
-                  <p className="text-white/90">FSSC 22000, ISO 22000 & HACCP</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="space-y-6">
             {expertiseDomains.map((domain) => (
               <div
