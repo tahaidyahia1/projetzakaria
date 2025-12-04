@@ -494,6 +494,16 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
               points: [
                 'Formation des inspecteurs',
                 'Mise en place d\'un système d\'évaluation de la conformité',
+            'Mise en place du système d’évaluation de la conformité',
+                'Audits internes et évaluation du système',
+                'Préparation à l’accréditation',
+                'Formation des inspecteurs',
+          title: '✔️ Exigences ISO 17020 et principes d’impartialité/indépendance.',
+             points: [ 
+                'Méthodologie d’inspection : préparation, exécution, plan d’échantillonnage',
+                'Rédaction des constats, rapports d’inspection et classification des non-conformités',
+                'Gestion des situations critiques, communication professionnelle et éthique de l’inspecteur',
+                'Techniques d’évaluation visuelle, documentaire et métrologique selon le domaine d’inspection',
               ],
             },
           ],
