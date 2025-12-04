@@ -81,7 +81,14 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
             },
             {
               subtitle: '✔️ ISO 15189:2012 – Laboratoires de biologie médicale',
-              points: ['....'],
+              points: [
+                'Analyse initiale du fonctionnement du laboratoire et identification des écarts par rapport à la norm',
+                'Mise en place ou réorganisation du système documentaire spécifique à la biologie médicale',
+                'Définition des processus pré-analytiques, analytiques et post-analytiques conformes aux exigences ISO 15189',
+                'Vérification et validation des méthodes d’analyse selon les contraintes biomédicales',
+                'Renforcement de la maîtrise métrologique : équipements, étalonnages, contrôles internes et externes',
+                'Mise en conformité du circuit du prélèvement à la validation biologique du résultat',
+                'Audit internes et audit a blanc',
             },
           ],
         },
