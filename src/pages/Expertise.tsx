@@ -81,8 +81,7 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
             },
             {
               subtitle: '✔️ ISO 15189:2012 – Laboratoires de biologie médicale',
-              points: ['· Analyse initiale du fonctionnement du laboratoire et identification des écarts par rapport à la norme.
-'],
+              points: ['....'],
             },
           ],
         },
