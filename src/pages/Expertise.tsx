@@ -89,6 +89,7 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
                 'Renforcement de la maîtrise métrologique : équipements, étalonnages, contrôles internes et externes',
                 'Mise en conformité du circuit du prélèvement à la validation biologique du résultat',
                 'Audit internes et audit a blanc',
+                ],
             },
           ],
         },
