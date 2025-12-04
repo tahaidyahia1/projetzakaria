@@ -8,6 +8,7 @@ export default function PartnerBanner() {
     { name: 'Institut Pasteur', image: '/partners/institut pasteur (logo).png' },
     { name: 'Royaume du Maroc', image: '/partners/royaume(logo).jpeg' },
     { name: 'ANDA', image: '/partners/anda.png(logo).png' },
+    { name: 'MarocPME', image: '/partners/marocpm.png(logo).png' },
     { name: 'Diversey', image: '/partners/diversay(logo).png' },
     { name: 'Euromed', image: '/partners/euromed(logo).png' },
   ];
