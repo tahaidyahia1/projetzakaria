@@ -498,7 +498,10 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
                 'Audits internes et évaluation du système',
                 'Préparation à l’accréditation',
                 'Formation des inspecteurs',
-          title: '✔️ Exigences ISO 17020 et principes d’impartialité/indépendance.',
+          
+              title: 
+              items: [
+            {  
              points: [ 
                 'Méthodologie d’inspection : préparation, exécution, plan d’échantillonnage',
                 'Rédaction des constats, rapports d’inspection et classification des non-conformités',
