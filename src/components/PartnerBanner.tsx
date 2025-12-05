@@ -13,6 +13,9 @@ export default function PartnerBanner() {
     { name: 'ANA', image: '/partners/ana (logo).jpeg' },
     { name: 'MarocPME', image: '/partners/marocpme.png' },
     { name: 'MarocPM', image: '/partners/marocpm.png(logo).png' },
+    { name: 'SRM TTA', image: '/partners/img_2738 copy.png' },
+    { name: 'AMEE', image: '/partners/img_2735 copy.jpeg' },
+    { name: 'Maroc', image: '/partners/mar.png(logo).png' },
   ];
 
   return (
