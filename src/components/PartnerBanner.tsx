@@ -12,6 +12,7 @@ export default function PartnerBanner() {
     { name: 'ONSSA', image: '/partners/img_2605_(1) copy.png' },
     { name: 'ONHYM', image: '/partners/img_2606_(1) copy.png' },
     { name: 'Société Régionale Multiservices Fès-Meknès', image: '/partners/img_2607 copy.png' },
+    { name: 'SRM TTA', image: '/partners/img_2738 copy copy copy.png' },
     { name: 'SRM', image: '/partners/srm.png' },
     { name: 'Fes-Meknes University', image: '/partners/fes-meknes.png' },
   ];
