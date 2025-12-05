@@ -8,6 +8,11 @@ export default function PartnerBanner() {
     { name: 'AMEE', image: '/partners/amee.gif' },
     { name: 'Institut Pasteur', image: '/partners/institut_pasteur.png_(logo) copy copy.png' },
     { name: 'SRM', image: '/partners/img_2608.jpeg(logo).jpeg' },
+    { name: 'ANA', image: '/partners/ana (logo).jpeg' },
+    { name: 'CNRST', image: '/partners/cnrst.png' },
+    { name: 'ONHYM', image: '/partners/onhym.png' },
+    { name: 'ONSSA', image: '/partners/onssa.png' },
+    { name: 'Fes-Meknes University', image: '/partners/fes-meknes.png' },
   ];
 
   return (
@@ -21,16 +26,16 @@ export default function PartnerBanner() {
         </div>
 
         <div className="bg-gray-50 rounded-2xl py-16 px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 items-center justify-items-center">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center w-full h-32 transition-transform hover:scale-110 duration-300"
+                className="flex items-center justify-center w-full h-32 transition-transform hover:scale-110 duration-300 group"
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-h-24 max-w-full w-auto h-auto object-contain transition-all duration-300"
+                  className="max-h-24 max-w-full w-auto h-auto object-contain transition-all duration-300 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
                   onError={(e) => {
                     console.error(`Failed to load: ${partner.image}`);
                     e.currentTarget.style.display = 'none';
