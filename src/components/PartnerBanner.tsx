@@ -7,11 +7,11 @@ export default function PartnerBanner() {
     { name: 'Euromed', image: '/partners/euromed.png(logo).png' },
     { name: 'AMEE', image: '/partners/amee.gif' },
     { name: 'Institut Pasteur', image: '/partners/institut_pasteur.png_(logo) copy copy.png' },
-    { name: 'SRM', image: '/partners/img_2608.jpeg(logo).jpeg' },
-    { name: 'ANA', image: '/partners/ana (logo).jpeg' },
-    { name: 'CNRST', image: '/partners/cnrst.png' },
-    { name: 'ONHYM', image: '/partners/onhym.png' },
-    { name: 'ONSSA', image: '/partners/onssa.png' },
+    { name: 'ANA', image: '/partners/img_2603 copy.png' },
+    { name: 'CNRST', image: '/partners/img_2604 copy.png' },
+    { name: 'ONSSA', image: '/partners/img_2605_(1) copy.png' },
+    { name: 'ONHYM', image: '/partners/img_2606_(1) copy.png' },
+    { name: 'SRM', image: '/partners/srm.png' },
     { name: 'Fes-Meknes University', image: '/partners/fes-meknes.png' },
   ];
 
