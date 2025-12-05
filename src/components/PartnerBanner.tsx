@@ -10,6 +10,9 @@ export default function PartnerBanner() {
     { name: 'ANDA', image: '/partners/anda.png(logo).png' },
     { name: 'Diversey', image: '/partners/diversay(logo).png' },
     { name: 'Euromed', image: '/partners/euromed(logo).png' },
+    { name: 'ANA', image: '/partners/ana (logo).jpeg' },
+    { name: 'MarocPME', image: '/partners/marocpme.png' },
+    { name: 'MarocPM', image: '/partners/marocpm.png(logo).png' },
   ];
 
   return (
