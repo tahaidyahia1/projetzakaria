@@ -1,13 +1,10 @@
 export default function PartnerBanner() {
   const partners = [
-    { name: 'CNRST', image: '/partners/cnrst.png' },
-    { name: 'ONSSA', image: '/partners/onssa.png' },
-    { name: 'ONHYM', image: '/partners/onhym.png' },
-    { name: 'SRM', image: '/partners/srm.png' },
-    { name: 'Fès-Meknès', image: '/partners/fes-meknes.png' },
-    { name: 'Institut Pasteur', image: '/partners/img_2738.png' },
-    { name: 'AMEE', image: '/partners/img_2735.jpeg' },
-    { name: 'MarocPME', image: '/partners/marocpme.png' },
+    { name: 'Royaume du Maroc', image: '/partners/royaume.png(logo).jpeg' },
+    { name: 'Diversey', image: '/partners/diversay.png(logo).png' },
+    { name: 'MarocPME', image: '/partners/mar.png(logo) copy.png' },
+    { name: 'ANDA', image: '/partners/anda.png(logo) copy.png' },
+    { name: 'Euromed', image: '/partners/euromed.png(logo).png' },
   ];
 
   return (
