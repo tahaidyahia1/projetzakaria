@@ -31,7 +31,7 @@ export default function PartnerBanner() {
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-h-24 max-w-full w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  className="max-h-24 max-w-full w-auto h-auto object-contain transition-all duration-300"
                   onError={(e) => {
                     console.error(`Failed to load: ${partner.image}`);
                     e.currentTarget.style.display = 'none';
