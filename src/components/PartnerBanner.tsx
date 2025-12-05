@@ -1,15 +1,18 @@
 export default function PartnerBanner() {
   const partners = [
-    { name: 'Royaume du Maroc', image: 'https://www.maroc.ma/sites/default/files/armoiries-png.png' },
-    { name: 'MarocPME', image: 'https://www.marocpme.ma/themes/custom/maroc_pme/logo.svg' },
-    { name: 'Euromed', image: 'https://www.euromed-management.com/sites/default/files/logo-euromed-school-of-business.png' },
-    { name: 'AMEE', image: 'https://www.amee.ma/sites/default/files/logo-amee.png' },
-    { name: 'Institut Pasteur', image: 'https://www.pasteur.ma/sites/default/files/logo-institut-pasteur-maroc.png' },
-    { name: 'ANA', image: 'https://www.onee.ma/sites/default/files/logo-ana.png' },
-    { name: 'CNRST', image: 'https://www.cnrst.ma/sites/default/files/logo-cnrst.png' },
-    { name: 'ONSSA', image: 'https://www.onssa.gov.ma/sites/default/files/logo-onssa.png' },
-    { name: 'ONHYM', image: 'https://www.onhym.com/sites/default/files/logo-onhym.png' },
-    { name: 'SRM', image: 'https://www.srmfqih.ma/sites/default/files/logo-srm.png' },
+    { name: 'Royaume du Maroc', image: 'https://placehold.co/200x100/e8e8e8/666666?text=Royaume+du+Maroc' },
+    { name: 'Diversey', image: 'https://placehold.co/200x100/e8e8e8/666666?text=Diversey' },
+    { name: 'MarocPME', image: 'https://placehold.co/200x100/e8e8e8/666666?text=MarocPME' },
+    { name: 'ANDA', image: 'https://placehold.co/200x100/e8e8e8/666666?text=ANDA' },
+    { name: 'Euromed', image: 'https://placehold.co/200x100/e8e8e8/666666?text=Euromed' },
+    { name: 'AMEE', image: 'https://placehold.co/200x100/e8e8e8/666666?text=AMEE' },
+    { name: 'Institut Pasteur', image: 'https://placehold.co/200x100/e8e8e8/666666?text=Institut+Pasteur' },
+    { name: 'ANA', image: 'https://placehold.co/200x100/e8e8e8/666666?text=ANA' },
+    { name: 'CNRST', image: 'https://placehold.co/200x100/e8e8e8/666666?text=CNRST' },
+    { name: 'ONSSA', image: 'https://placehold.co/200x100/e8e8e8/666666?text=ONSSA' },
+    { name: 'ONHYM', image: 'https://placehold.co/200x100/e8e8e8/666666?text=ONHYM' },
+    { name: 'SRM', image: 'https://placehold.co/200x100/e8e8e8/666666?text=SRM' },
+    { name: 'Fes-Meknes University', image: 'https://placehold.co/200x100/e8e8e8/666666?text=Fes+Meknes' },
   ];
 
   return (
