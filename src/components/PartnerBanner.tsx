@@ -1,19 +1,13 @@
 export default function PartnerBanner() {
   const partners = [
-    { name: 'CNRST', image: '/partners/cnrst.png (CNRST logo).png' },
-    { name: 'ONSSA', image: '/partners/onssa.png (ONSSA logo).png' },
-    { name: 'ONHYM', image: '/partners/onhym.png (ONHYM logo).png' },
-    { name: 'SRM', image: '/partners/srm.png (SRM logo).png' },
-    { name: 'Fès-Meknès', image: '/logoooooo.png' },
-    { name: 'Institut Pasteur', image: '/partners/institut pasteur (logo).png' },
-    { name: 'Royaume du Maroc', image: '/partners/royaume(logo).jpeg' },
-    { name: 'ANDA', image: '/partners/anda.png(logo).png' },
-    { name: 'Diversey', image: '/partners/diversay(logo).png' },
-    { name: 'Euromed', image: '/partners/euromed(logo).png' },
+    { name: 'CNRST', image: '/partners/cnrst.png' },
+    { name: 'ONSSA', image: '/partners/onssa.png' },
+    { name: 'ONHYM', image: '/partners/onhym.png' },
+    { name: 'SRM', image: '/partners/srm.png' },
+    { name: 'Fès-Meknès', image: '/partners/fes-meknes.png' },
+    { name: 'Institut Pasteur', image: '/partners/img_2738.png' },
+    { name: 'AMEE', image: '/partners/img_2735.jpeg' },
     { name: 'MarocPME', image: '/partners/marocpme.png' },
-    { name: 'SRM TTA', image: '/partners/img_2738 copy.png' },
-    { name: 'AMEE', image: '/partners/img_2735 copy.jpeg' },
-    { name: 'Maroc', image: '/partners/mar.png(logo).png' },
   ];
 
   return (
