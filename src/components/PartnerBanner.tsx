@@ -6,8 +6,8 @@ export default function PartnerBanner() {
     { name: 'ANDA', image: '/partners/anda.png(logo) copy.png' },
     { name: 'Euromed', image: '/partners/euromed.png(logo).png' },
     { name: 'AMEE', image: '/partners/amee.gif' },
-    { name: 'Institut Pasteur', image: '/partners/institut_pasteur.png_(logo).png' },
-    { name: 'SRM', image: '/partners/img_2608.jpeg' },
+    { name: 'Institut Pasteur', image: '/partners/institut_pasteur.png_(logo) copy copy.png' },
+    { name: 'SRM', image: '/partners/img_2608.jpeg(logo).jpeg' },
     { name: 'Euromed Logistics', image: '/partners/euromed.png(logo) copy.png' },
   ];
 
