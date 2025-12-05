@@ -11,6 +11,7 @@ export default function PartnerBanner() {
     { name: 'CNRST', image: '/partners/img_2604 copy.png' },
     { name: 'ONSSA', image: '/partners/img_2605_(1) copy.png' },
     { name: 'ONHYM', image: '/partners/img_2606_(1) copy.png' },
+    { name: 'Société Régionale Multiservices Fès-Meknès', image: '/partners/img_2607 copy.png' },
     { name: 'SRM', image: '/partners/srm.png' },
     { name: 'Fes-Meknes University', image: '/partners/fes-meknes.png' },
   ];
