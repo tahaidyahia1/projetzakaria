@@ -5,6 +5,10 @@ export default function PartnerBanner() {
     { name: 'MarocPME', image: '/partners/mar.png(logo) copy.png' },
     { name: 'ANDA', image: '/partners/anda.png(logo) copy.png' },
     { name: 'Euromed', image: '/partners/euromed.png(logo).png' },
+    { name: 'AMEE', image: '/partners/amee.gif' },
+    { name: 'Institut Pasteur', image: '/partners/institut_pasteur.png_(logo).png' },
+    { name: 'SRM', image: '/partners/img_2608.jpeg' },
+    { name: 'Euromed Logistics', image: '/partners/euromed.png(logo) copy.png' },
   ];
 
   return (
@@ -47,7 +51,7 @@ export default function PartnerBanner() {
 
         .animate-scroll {
           display: flex;
-          animation: scroll 20s linear infinite;
+          animation: scroll 12s linear infinite;
           width: fit-content;
         }
 
