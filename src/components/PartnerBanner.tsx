@@ -1,18 +1,15 @@
 export default function PartnerBanner() {
   const partners = [
-    { name: 'Royaume du Maroc', image: '/partners/royaume.png(logo).jpeg' },
-    { name: 'Diversey', image: '/partners/diversay.png(logo).png' },
-    { name: 'MarocPME', image: '/partners/mar.png(logo) copy.png' },
-    { name: 'ANDA', image: '/partners/anda.png(logo) copy.png' },
-    { name: 'Euromed', image: '/partners/euromed.png(logo).png' },
-    { name: 'AMEE', image: '/partners/amee.gif' },
-    { name: 'Institut Pasteur', image: '/partners/institut_pasteur.png_(logo) copy copy.png' },
-    { name: 'ANA', image: '/partners/img_2603 copy.png' },
-    { name: 'CNRST', image: '/partners/img_2604 copy.png' },
-    { name: 'ONSSA', image: '/partners/img_2605_(1) copy.png' },
-    { name: 'ONHYM', image: '/partners/img_2606_(1) copy.png' },
-    { name: 'SRM', image: '/partners/srm.png' },
-    { name: 'Fes-Meknes University', image: '/partners/fes-meknes.png' },
+    { name: 'Royaume du Maroc', image: 'https://www.maroc.ma/sites/default/files/armoiries-png.png' },
+    { name: 'MarocPME', image: 'https://www.marocpme.ma/themes/custom/maroc_pme/logo.svg' },
+    { name: 'Euromed', image: 'https://www.euromed-management.com/sites/default/files/logo-euromed-school-of-business.png' },
+    { name: 'AMEE', image: 'https://www.amee.ma/sites/default/files/logo-amee.png' },
+    { name: 'Institut Pasteur', image: 'https://www.pasteur.ma/sites/default/files/logo-institut-pasteur-maroc.png' },
+    { name: 'ANA', image: 'https://www.onee.ma/sites/default/files/logo-ana.png' },
+    { name: 'CNRST', image: 'https://www.cnrst.ma/sites/default/files/logo-cnrst.png' },
+    { name: 'ONSSA', image: 'https://www.onssa.gov.ma/sites/default/files/logo-onssa.png' },
+    { name: 'ONHYM', image: 'https://www.onhym.com/sites/default/files/logo-onhym.png' },
+    { name: 'SRM', image: 'https://www.srmfqih.ma/sites/default/files/logo-srm.png' },
   ];
 
   return (
