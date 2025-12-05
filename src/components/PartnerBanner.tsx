@@ -12,53 +12,36 @@ export default function PartnerBanner() {
   ];
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-gray-900 mb-2">
             ILS NOUS FONT{' '}
             <span className="text-primary">CONFIANCE</span>
           </h2>
         </div>
 
-        <div className="relative bg-gray-50 rounded-2xl py-12 overflow-hidden">
-          <div className="flex animate-scroll">
-            {[...partners, ...partners, ...partners].map((partner, index) => (
+        <div className="bg-gray-50 rounded-2xl py-16 px-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            {partners.map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex items-center justify-center px-12"
+                className="flex items-center justify-center w-full h-32 transition-transform hover:scale-110 duration-300"
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="h-20 md:h-24 lg:h-28 w-auto object-contain"
+                  className="max-h-24 max-w-full w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  onError={(e) => {
+                    console.error(`Failed to load: ${partner.image}`);
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-
-        .animate-scroll {
-          display: flex;
-          animation: scroll 12s linear infinite;
-          width: fit-content;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
