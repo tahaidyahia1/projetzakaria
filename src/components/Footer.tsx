@@ -103,7 +103,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     href="tel:+212 6 63 58 72 72"
                     className="block text-gray-400 hover:text-white transition-colors"
                   >
-                    +212 6 63 58 72 72
+                    +212 663-587272
                   </a>
                 </div>
               </li>
