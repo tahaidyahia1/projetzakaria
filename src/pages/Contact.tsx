@@ -39,8 +39,8 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Téléphone',
-      value: '+212 664-779420',
-      link: '+212 664-779420',
+      value: ['+212 664-779420', '+212 6 63 58 72 72'],
+      link: null,
     },
     {
       icon: MapPin,
@@ -86,7 +86,19 @@ export default function Contact() {
                 <h3 className="font-display font-bold text-xl text-gray-900 mb-2">
                   {info.title}
                 </h3>
-                {info.link ? (
+                {Array.isArray(info.value) ? (
+                  <div className="space-y-1">
+                    {info.value.map((val, idx) => (
+                      <a
+                        key={idx}
+                        href={`tel:${val}`}
+                        className="block text-primary hover:text-primary-600 font-medium transition-colors"
+                      >
+                        {val}
+                      </a>
+                    ))}
+                  </div>
+                ) : info.link ? (
                   <a
                     href={info.link}
                     className="text-primary hover:text-primary-600 font-medium transition-colors"
