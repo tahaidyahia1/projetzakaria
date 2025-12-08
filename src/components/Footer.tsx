@@ -84,7 +84,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <a
-                  href="mailto:contact@cap2a-consulting.com"
+                  href="mailto:saoussanebakkali@cap2a-consulting.ma"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   contact@cap2a-consulting.com
