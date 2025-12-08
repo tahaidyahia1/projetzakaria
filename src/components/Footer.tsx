@@ -92,20 +92,21 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <a
-                    href="tel:+212 664-779420"
-                    className="block text-gray-400 hover:text-white transition-colors"
-                  >
-                    +212 664-779420
-                  </a>
-                  <a
-                    href="tel:+212 6 63 58 72 72"
-                    className="block text-gray-400 hover:text-white transition-colors"
-                  >
-                    +212 663-587272
-                  </a>
-                </div>
+                <a
+                  href="tel:+212 664-779420"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  +212 664-779420
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <a
+                  href="tel:+212 663-587272"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  +212 663-587272
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
