@@ -583,7 +583,7 @@ export default function Expertise({ onNavigate }: ExpertiseProps) {
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
 
-                    <h3 className="font-display font-bold text-2xl text-gray-900 mb-4 group-hover:text-primary transition-colors whitespace-nowrap">
+                    <h3 className="font-display font-bold text-xl text-gray-900 mb-4 group-hover:text-primary transition-colors whitespace-nowrap">
                       {service.title}
                     </h3>
 
