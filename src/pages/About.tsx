@@ -207,7 +207,7 @@ export default function About() {
                 </span>
               </div>
               <h3 className="font-display font-bold text-3xl text-gray-900">
-                Une Méthode Prouvée
+                Une Méthodologie solide, basée sur des bonnes pratiques internationales
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Notre méthodologie éprouvée combine analyse rigoureuse, expertise sectorielle et innovation continue. Nous travaillons main dans la main avec nos clients pour garantir des résultats mesurables et durables.
