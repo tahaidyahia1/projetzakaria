@@ -39,7 +39,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Téléphone',
-      value: ['+212 664-779420', '+212 6 63 58 72 72'],
+      value: ['+212 664-779420', '+212 663-587272'],
       link: null,
     },
     {
