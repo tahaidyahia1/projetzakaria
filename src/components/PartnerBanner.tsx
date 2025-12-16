@@ -8,6 +8,7 @@ export default function PartnerBanner() {
     { name: 'AMEE', image: '/partners/amee.gif' },
     { name: 'Institut Pasteur', image: '/partners/institut_pasteur.png_(logo) copy copy.png' },
     { name: 'Lab2A', image: '/lab.jpeg(logo).jpeg' },
+    { name: 'Région Tanger-Tétouan-Al Hoceima', image: '/partners/royaume.png(logo) copy.jpeg' },
     { name: 'ANA', image: '/partners/img_2603 copy.png' },
     { name: 'CNRST', image: '/partners/img_2604 copy.png' },
     { name: 'ONSSA', image: '/partners/img_2605_(1) copy.png' },
