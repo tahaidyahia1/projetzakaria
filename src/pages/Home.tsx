@@ -121,7 +121,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 Votre Excellence, Notre Mission
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Chez <span className="font-semibold text-primary">CAP2A Consulting</span>, nous sommes convaincus que toute organisation peut atteindre un niveau d’excellence durable lorsqu’elle bénéficie d’un accompagnement adapté et d’une montée en compétence continue. Forts de plus de 8 années d’expérience dans les systèmes de management de la qualité, nous aidons les organismes publics et privés à structurer, améliorer et pérenniser leurs démarches qualité.
+                Chez <span className="font-semibold text-primary">CAP2A Consulting</span>, nous sommes convaincus que toute organisation peut atteindre un niveau d’excellence durable lorsqu’elle bénéficie d’un accompagnement adapté et d’une montée en compétence continue. Forts de plus de 8 années d’expérience dans les systèmes de management , nous aidons les organismes publics et privés à structurer, améliorer et pérenniser leurs démarches qualité.
 
 Notre approche repose sur une combinaison maîtrisée de référentiels internationaux, de méthodes pédagogiques éprouvées et d’un accompagnement personnalisé, permettant à nos clients d’optimiser leurs processus, de renforcer la conformité réglementaire et d’améliorer la performance globale.
 À travers nos missions de conseil, d’audit et de formation, nous garantissons un soutien opérationnel de bout en bout et des résultats concrets, mesurables et alignés avec les objectifs stratégiques de nos partenaires.
