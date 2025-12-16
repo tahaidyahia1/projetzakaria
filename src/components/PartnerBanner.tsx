@@ -1,6 +1,6 @@
 export default function PartnerBanner() {
   const partners = [
-    { name: 'Royaume du Maroc', image: '/partners/royaume.png(logo).jpeg' },
+    { name: 'Royaume du Maroc', image: '/royaume.jpeg(logo).jpeg' },
     { name: 'Diversey', image: '/partners/diversay.png(logo).png' },
     { name: 'MarocPME', image: '/partners/mar.png(logo) copy.png' },
     { name: 'ANDA', image: '/partners/anda.png(logo) copy.png' },
