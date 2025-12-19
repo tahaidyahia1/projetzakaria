@@ -160,7 +160,7 @@ Notre approche repose sur une combinaison maîtrisée de référentiels internat
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
             {[
-              { number: '8+', label: 'Années d\'expérience' },
+              { number: '20+', label: 'Années d\'expérience' },
               { number: '200+', label: 'Clients satisfaits' },
               { number: '500+', label: 'Projets réalisés' },
               { number: '98%', label: 'Taux de satisfaction' },
