@@ -253,7 +253,7 @@ export default function Contact() {
                     Notre Bureau
                   </h3>
                   <p className="text-gray-600">
-                    Mahaj riad appt 6 , Rabat , Maroc
+                    Mahaj riad Appt 6 , Imm6 , Rabat , Maroc
                   </p>
                   <p className="text-sm text-gray-500 mt-4">
                     Nous sommes situés au cœur de Rabat pour mieux vous servir.
